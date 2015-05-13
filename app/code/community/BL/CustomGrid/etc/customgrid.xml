@@ -490,6 +490,35 @@
             </custom_columns>
         </system_store>
         
+        <core_urlrewrite model="customgrid/grid_type_urlrewrite" module="customgrid">
+            <name>URL Rewrite</name>
+            <sort_order>400000</sort_order>
+            <custom_columns>
+                <request_path_urldecoded model="customgrid/custom_column_simple_duplicate" module="customgrid">
+                    <name>Request Path (URL Decoded)</name>
+                    <group>Duplicated</group>
+                    <allow_renderers>1</allow_renderers>
+                    <config_params>
+                        <duplicated_field_name>request_path</duplicated_field_name>
+                    </config_params>
+                    <block_params>
+                        <renderer>customgrid/widget_grid_column_renderer_text_urldecoded</renderer>
+                    </block_params>
+                </request_path_urldecoded>
+                <target_path_urldecoded model="customgrid/custom_column_simple_duplicate" module="customgrid">
+                    <name>Target Path (URL Decoded)</name>
+                    <group>Duplicated</group>
+                    <allow_renderers>1</allow_renderers>
+                    <config_params>
+                        <duplicated_field_name>target_path</duplicated_field_name>
+                    </config_params>
+                    <block_params>
+                        <renderer>customgrid/widget_grid_column_renderer_text_urldecoded</renderer>
+                    </block_params>
+                </target_path_urldecoded>
+            </custom_columns>
+        </core_urlrewrite>
+
         <other model="customgrid/grid_type_other" module="customgrid">
             <name>Other</name>
             <sort_order>1000000000</sort_order>
