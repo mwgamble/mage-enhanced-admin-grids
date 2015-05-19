@@ -16,7 +16,7 @@
 abstract class BL_CustomGrid_Model_Grid_Rewriter_Abstract extends BL_CustomGrid_Object
 {
     const REWRITE_CODE_VERSION = 3; // bump this value when significant changes are made to the rewriting code
-    
+
     /**
      * Return the fixed base of the rewriting class names used by the extension
      * 
@@ -108,7 +108,14 @@ abstract class BL_CustomGrid_Model_Grid_Rewriter_Abstract extends BL_CustomGrid_
     {
         return 'class ' . $blcgClassName . ' extends ' . $originalClassName . '
 {
+    /**
+     * @var BL_CustomGrid_Model_Grid
+     */
     private $_blcg_gridModel    = null;
+
+    /**
+     * @var BL_CustomGrid_Model_Grid_Type_Abstract
+     */
     private $_blcg_typeModel    = null;
     private $_blcg_filterParam  = null;
     private $_blcg_exportConfig = null;
@@ -159,6 +166,12 @@ abstract class BL_CustomGrid_Model_Grid_Rewriter_Abstract extends BL_CustomGrid_
         }
         
         return $return;
+    }
+
+    public function blcg_unsetCollection()
+    {
+        $this->_collection = null;
+        return $this;
     }
     
     public function getCollection()

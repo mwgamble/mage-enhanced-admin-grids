@@ -489,7 +489,12 @@
                 </store_code>
             </custom_columns>
         </system_store>
-        
+
+        <sales_transactions model="customgrid/grid_type_sales_transactions" module="customgrid">
+            <name>Transactions</name>
+            <sort_order>240000</sort_order>
+        </sales_transactions>
+
         <other model="customgrid/grid_type_other" module="customgrid">
             <name>Other</name>
             <sort_order>1000000000</sort_order>

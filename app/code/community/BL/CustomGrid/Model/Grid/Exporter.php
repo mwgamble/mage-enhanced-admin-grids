@@ -76,8 +76,9 @@ class BL_CustomGrid_Model_Grid_Exporter extends BL_CustomGrid_Model_Grid_Worker
         $typeModel->beforeGridExport($format, null);
         /** @var $layout Mage_Core_Model_Layout */
         $layout = Mage::getSingleton('core/layout');
+        /** @var $gridBlock Mage_Adminhtml_Block_Widget_Grid */
         $gridBlock = $layout->createBlock($gridModel->getBlockType());
-        
+
         if (is_array($config)) {
             $gridBlock->blcg_setExportConfig($config);
         }
