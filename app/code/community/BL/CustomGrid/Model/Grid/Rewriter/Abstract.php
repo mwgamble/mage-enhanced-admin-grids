@@ -259,9 +259,18 @@ abstract class BL_CustomGrid_Model_Grid_Rewriter_Abstract extends BL_CustomGrid_
             $break = false;
             $first = false;
             $count = null;
-            
+
+            if ($originalCollection instanceof Varien_Data_Collection_Db) {
+                $selectProperty = new ReflectionProperty(get_class($originalCollection), "_select");
+                $selectProperty->setAccessible(true);
+                $originalSelect = $originalCollection->getSelect();
+            }
             while ($break !== true) {
                 $collection = clone $originalCollection;
+                if ($originalCollection instanceof Varien_Data_Collection_Db) {
+                    $select = clone $originalSelect;
+                    $selectProperty->setValue($collection, $select);
+                }
                 $collection->setPageSize($pageSize);
                 $collection->setCurPage($page);
                 
