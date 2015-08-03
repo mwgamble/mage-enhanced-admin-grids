@@ -15,7 +15,7 @@
 
 abstract class BL_CustomGrid_Model_Grid_Rewriter_Abstract extends BL_CustomGrid_Object
 {
-    const REWRITE_CODE_VERSION = 3; // bump this value when significant changes are made to the rewriting code
+    const REWRITE_CODE_VERSION = 4; // bump this value when significant changes are made to the rewriting code
 
     /**
      * Return the fixed base of the rewriting class names used by the extension
