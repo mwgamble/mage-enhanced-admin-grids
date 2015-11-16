@@ -497,7 +497,6 @@
                 <id_path_urldecoded model="customgrid/custom_column_urldecoded" module="customgrid">
                     <name>ID Path (URL Decoded)</name>
                     <group>Duplicated</group>
-                    <allow_renderers>1</allow_renderers>
                     <config_params>
                         <duplicated_field_name>id_path</duplicated_field_name>
                     </config_params>
@@ -505,7 +504,6 @@
                 <request_path_urldecoded model="customgrid/custom_column_urldecoded" module="customgrid">
                     <name>Request Path (URL Decoded)</name>
                     <group>Duplicated</group>
-                    <allow_renderers>1</allow_renderers>
                     <config_params>
                         <duplicated_field_name>request_path</duplicated_field_name>
                     </config_params>
@@ -513,7 +511,6 @@
                 <target_path_urldecoded model="customgrid/custom_column_urldecoded" module="customgrid">
                     <name>Target Path (URL Decoded)</name>
                     <group>Duplicated</group>
-                    <allow_renderers>1</allow_renderers>
                     <config_params>
                         <duplicated_field_name>target_path</duplicated_field_name>
                     </config_params>
