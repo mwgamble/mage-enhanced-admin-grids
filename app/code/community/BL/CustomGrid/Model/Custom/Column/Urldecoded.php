@@ -24,21 +24,9 @@ class BL_CustomGrid_Model_Custom_Column_Urldecoded extends BL_CustomGrid_Model_C
         Mage_Core_Model_Store $store
     ) {
         return array(
+            'filter_mode' => BL_CustomGrid_Block_Widget_Grid_Column_Filter_Text::MODE_INSIDE_LIKE,
+            'filter' => 'customgrid/widget_grid_column_filter_text_urldecoded',
             'renderer' => 'customgrid/widget_grid_column_renderer_text_urldecoded',
-            'filter_condition_callback' => array($this, 'addFilterToGridCollection'),
         );
-    }
-
-    /**
-     * @param Mage_Core_Model_Resource_Url_Rewrite_Collection $collection
-     * @param Mage_Adminhtml_Block_Widget_Grid_Column $columnBlock
-     */
-    public function addFilterToGridCollection($collection, Mage_Adminhtml_Block_Widget_Grid_Column $columnBlock)
-    {
-        $filter = $columnBlock->getFilter();
-        $value = $filter->getValue();
-        $filter->setValue(urlencode($value));
-        $collection->addFieldToFilter($this->getDuplicatedFieldName(), $filter->getCondition());
-        $filter->setValue($value);
     }
 }
